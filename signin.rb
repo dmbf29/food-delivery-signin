@@ -1,6 +1,3 @@
-require "io/console"
-require "json"
-
 def clone_repo(batch_number)
   system("git clone git@github.com:dmbf29/food-delivery-#{batch_number}.git")
 end
@@ -48,6 +45,7 @@ end
 
 puts "What's your batch number?"
 batch_number = gets.chomp
+puts
 
 puts "Choose ONE option:"
 puts "replace -> I just want to replace everything from yesterday with our livecode"
@@ -56,6 +54,7 @@ choice = nil
 until ['replace', 'signin'].include?(choice)
   puts
   puts "replace or signin"
+  print "> "
   choice = gets.chomp.downcase
 end
 
