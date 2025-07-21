@@ -41,11 +41,17 @@ if directory_location[-41..-1] == correct_dir
   puts "You're in the right directory 👌, continuing..."
 else
   puts "⚠️ You're in the wrong place. You need to be in: #{correct_dir}"
+  puts
   puts "I can try to get you there..."
   puts "What's your github username?"
   github_username = gets.chomp
-  succeed = system("cd ~/code/#{github_username}/fullstack-challenges/02-OOP/05-Food-Delivery-Day-Two/01-Food-Delivery")
-  unless succeed
+  # succeed = system("cd ~/code/#{github_username}/fullstack-challenges/02-OOP/05-Food-Delivery-Day-Two/01-Food-Delivery")
+  target_path = File.expand_path("~/code/#{github_username}/fullstack-challenges/02-OOP/05-Food-Delivery-Day-Two/01-Food-Delivery")
+
+  if Dir.exist?(target_path)
+    Dir.chdir(target_path)
+    puts "Found the correct folder! 👀"
+  else
     puts "Sorry couldn't move to that folder. Call a TA or check Kitt for instructions."
     return
   end
