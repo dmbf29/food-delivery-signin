@@ -3,7 +3,6 @@ def clone_repo(batch_number)
 end
 
 def signin_choice(batch_number)
-  system("cp -rf ../../04-Food-Delivery-Day-One/01-Food-Delivery/{app,data,app.rb,router.rb} .")
   system("cp -rf food-delivery-day-two-lecture-#{batch_number}/app/views/session_view.rb app/views")
   system("cp -rf food-delivery-day-two-lecture-#{batch_number}/app/controllers/sessions_controller.rb app/controllers")
   system("cp -rf food-delivery-day-two-lecture-#{batch_number}/app/repositories/employee_repository.rb app/repositories")
@@ -14,7 +13,7 @@ def signin_choice(batch_number)
 end
 
 def replace_choice(batch_number)
-  system("cp -rf ../../04-Food-Delivery-Day-One/01-Food-Delivery/{app,data,app.rb,router.rb} .")
+
   system("cp -rf food-delivery-day-two-lecture-#{batch_number}/app/views/session_view.rb app/views")
   system("cp -rf food-delivery-day-two-lecture-#{batch_number}/app/controllers/sessions_controller.rb app/controllers")
   system("cp -rf food-delivery-day-two-lecture-#{batch_number}/app/repositories/employee_repository.rb app/repositories")
