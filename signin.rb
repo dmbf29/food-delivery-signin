@@ -1,5 +1,7 @@
+TEACHER_GITHUB = 'noemi-ashizuka'
+
 def clone_repo(batch_number)
-  system("git clone git@github.com:SuzukiRyuichiro/food-delivery-day-two-lecture-#{batch_number}.git")
+  system("git clone git@github.com:#{TEACHER_GITHUB}/food-delivery-day-two-lecture-#{batch_number}.git")
 end
 
 def signin_choice(batch_number)
@@ -13,7 +15,6 @@ def signin_choice(batch_number)
 end
 
 def replace_choice(batch_number)
-
   system("cp -rf food-delivery-day-two-lecture-#{batch_number}/app/views/session_view.rb app/views")
   system("cp -rf food-delivery-day-two-lecture-#{batch_number}/app/controllers/sessions_controller.rb app/controllers")
   system("cp -rf food-delivery-day-two-lecture-#{batch_number}/app/repositories/employee_repository.rb app/repositories")
@@ -82,6 +83,6 @@ if succeed
   puts "All finished! 🎉"
 else
   puts "⚠️⚠️⚠️"
-  puts "Looks like something went wrong. Did you enter the correct number? Is there a repository at: 'www.github.com/SuzukiRyuichiro/food-delivery-#{batch_number}'"
+  puts "Looks like something went wrong. Did you enter the correct number? Is there a repository at: 'www.github.com/#{TEACHER_GITHUB}/food-delivery-#{batch_number}'"
   puts "⚠️⚠️⚠️"
 end
